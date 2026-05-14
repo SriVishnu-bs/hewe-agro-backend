@@ -38,7 +38,7 @@ export const getCart = async (req, res) => {
       cart,
     });
   } catch (error) {
-    console.log('GET CART ERROR:', error);
+   
     return res.status(500).json({ message: 'Failed to fetch cart' });
   }
 };
@@ -93,7 +93,7 @@ const { items } = req.body;
       cart,
     });
   } catch (error) {
-    console.log('UPDATE CART ERROR:', error);
+  
     return res.status(500).json({ message: 'Failed to update cart' });
   }
 };
@@ -122,7 +122,7 @@ export const clearCart = async (req, res) => {
       cart,
     });
   } catch (error) {
-    console.log('CLEAR CART ERROR:', error);
+   
     return res.status(500).json({ message: 'Failed to clear cart' });
   }
 };
@@ -191,10 +191,7 @@ export const getCartSummary = async (
       },
     });
   } catch (error) {
-    console.log(
-      'GET CART SUMMARY ERROR:',
-      error
-    );
+    
 
     return res.status(500).json({
       success: false,

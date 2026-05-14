@@ -60,7 +60,7 @@ export const createProduct = async (req, res) => {
 
 export const updateProduct = async (req, res) => {
   try {
-    console.log('UPDATE PRODUCT BODY:', req.body);
+    
     const product = await Product.findByIdAndUpdate(
       req.params.id,
       {
@@ -154,7 +154,7 @@ export const deleteProduct = async (req, res) => {
       try {
         await cloudinary.uploader.destroy(publicId);
       } catch (e) {
-        console.log('CLOUDINARY DELETE ERROR:', e);
+      
       }
     }
 
@@ -241,7 +241,7 @@ export const addReview = async (req, res) => {
     });
 
   } catch (error) {
-    console.log('ADD REVIEW ERROR',error);
+    
     return res.status(500).json({
       success: false,
       message: error.message,
@@ -310,7 +310,7 @@ export const editReview = async (req, res) => {
     });
 
   } catch (error) {
-    console.log('EDIT REVIEW ERROR:', error);
+   
     return res.status(500).json({
       success: false,
       message: 'Failed to edit review',

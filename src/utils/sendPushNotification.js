@@ -6,7 +6,7 @@ const sendPushNotification = async ({
 }) => {
   try {
     if (!expoPushToken) {
-      console.log('NO EXPO PUSH TOKEN FOUND');
+     
       return null;
     }
 
@@ -32,16 +32,14 @@ const sendPushNotification = async ({
 
     const result = await response.json();
 
-    console.log('EXPO PUSH STATUS:', response.status);
-    console.log('EXPO PUSH RESULT:', result);
-
+    
     if (!response.ok) {
       throw new Error(result?.errors?.[0]?.message || 'Expo push failed');
     }
 
     return result;
   } catch (error) {
-    console.log('Push notification error:', error.message);
+    
     throw error;
   }
 };

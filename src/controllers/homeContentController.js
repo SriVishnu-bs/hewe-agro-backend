@@ -277,7 +277,7 @@ if (existing.type === 'banner' && existing.isActive) {
       try {
         await cloudinary.uploader.destroy(oldPublicId);
       } catch (error) {
-        console.log('OLD HOME CONTENT IMAGE DELETE ERROR:', error.message);
+      
       }
     }
 
@@ -382,7 +382,7 @@ export const deleteHomeContent = async (req, res) => {
       try {
         await cloudinary.uploader.destroy(item.imagePublicId);
       } catch (error) {
-        console.log('HOME CONTENT IMAGE DELETE ERROR:', error.message);
+      
       }
     }
 

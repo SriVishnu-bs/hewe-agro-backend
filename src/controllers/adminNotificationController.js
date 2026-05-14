@@ -18,7 +18,7 @@ export const createAdminNotification = async ({
       data,
     });
   } catch (error) {
-    console.log('Create admin notification error:', error.message);
+   
   }
 };
 
@@ -104,7 +104,7 @@ export const markAllAdminNotificationsAsRead = async (req, res) => {
   }
 };
 export const sendNotificationToUsers = async (req, res) => {
-  console.log('ADMIN SEND NOTIFICATION API HIT');
+ 
 
   
   try {
@@ -226,13 +226,10 @@ export const sendNotificationToUsers = async (req, res) => {
       'expoPushToken'
     );
 
-  console.log(
-  'USER PUSH TOKEN:',
-  fullUser?.expoPushToken
-);
+ 
 
 if (fullUser?.expoPushToken) {
-  console.log('SENDING PUSH NOW');
+ 
 
   await sendPushNotification({
     expoPushToken: fullUser.expoPushToken,
@@ -243,7 +240,7 @@ if (fullUser?.expoPushToken) {
     },
   });
 
-  console.log('PUSH SENT SUCCESS');
+  
 }
   })
 );

@@ -42,10 +42,7 @@ const sendUserOrderPush = async ({
       },
     });
   } catch (error) {
-    console.log(
-      'USER ORDER PUSH ERROR:',
-      error.message
-    );
+   
   }
 };
 const generateOrderId = () => {

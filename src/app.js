@@ -19,7 +19,7 @@ import adminNotificationRoutes from './routes/adminNotificationRoutes.js';
 const app = express();
 app.use(helmet());
 
-//app.use(mongoSanitize());
+app.use(mongoSanitize());
 
 app.use(hpp());
 
@@ -27,7 +27,11 @@ app.use(compression());
 
 app.use(
   cors({
-    origin: '*',
+    origin: [
+  'https://heweagro.com',
+  'https://www.heweagro.com',
+  'http://localhost:8081',
+],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true,
   })
@@ -52,7 +56,7 @@ app.use((req, res, next) => {
 
   next();
 });
-
+app.set('trust proxy', 1);
 const loginLimiter = rateLimit({
   windowMs: 15 * 60 * 1000,
   max: 10,

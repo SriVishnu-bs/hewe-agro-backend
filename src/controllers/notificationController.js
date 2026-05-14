@@ -15,7 +15,7 @@ export const createNotification = async ({
       data,
     });
   } catch (error) {
-    console.log('Create notification error:', error.message);
+   
   }
 };
 
