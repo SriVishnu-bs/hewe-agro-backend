@@ -19,14 +19,7 @@ import adminNotificationRoutes from './routes/adminNotificationRoutes.js';
 const app = express();
 app.use(helmet());
 
-app.use(
-  mongoSanitize({
-    replaceWith: '_',
-    onSanitize: ({ req, key }) => {
-      // optional: sanitized key
-    },
-  })
-);
+//app.use(mongoSanitize());
 
 app.use(hpp());
 
